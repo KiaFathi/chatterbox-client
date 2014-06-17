@@ -1,6 +1,7 @@
 // YOUR CODE HERE:
 
 var app = {
+  _username : document.URL.split("=")[1],
   _roomList : {},
   _friendList : {},
   _selectedRoom : 'all',
@@ -95,7 +96,7 @@ $(document).ready(function() {
     var msg = $('textarea').val();
     $('textarea').val("");
     console.log(app._selectedRoom);
-    app.handleSubmit(msg,'Albrey\'s Dance Moves' , app._selectedRoom);
+    app.handleSubmit(msg, app._username , app._selectedRoom);
   });
   $('body').on('click', '#roomtag', function() {
     app._selectedRoom = $(this).text();
